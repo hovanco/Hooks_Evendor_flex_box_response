@@ -1,0 +1,162 @@
+.feature {
+  padding-top: 10rem;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15rem;
+
+    // make text on left, image on right
+    &:nth-child(odd) {
+      .feature__info {
+        padding-left: 10rem;
+      }
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      .feature__info {
+        padding-right: 10rem;
+      }
+    }
+  }
+
+  &__image, 
+  &__info {
+    width: 50%;
+  }
+
+  // &__info {
+  //  padding-left: 10rem;
+  // }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+  }
+
+  &__desc {
+    font-weight: 300;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+
+  &-intro {
+    &__item {
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-decoration: underline;
+      font-size: 1.8rem;
+
+      // make bullet circle 
+      &--circle {
+        text-decoration: none;
+        position: relative;
+        padding-left: 3rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          // start make circle and text in aline
+          top: 50%; 
+          transform: translateY(-50%);
+          left: 0;
+          // end make circle and text in aline
+          width: 2rem;
+          height: 2rem;
+          border-radius: 2rem;
+          background-color: #00aefd;
+        }
+
+        &:nth-child(2):before {
+          background-color: #ffa400;
+        }
+        &:nth-child(3):before {
+          background-color: #ff7870;
+        }
+        &:last-child:before{
+          background-color: #f00;
+        }
+      }
+    }
+  }
+
+  &-best {
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 0.4rem;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: #ffa400;
+      position: relative;
+      z-index: 1; // de icon de mau nen
+
+      // thay doi mau cho moi icon
+      &--green {
+        color: #07a787;
+      }
+
+      &--purple {
+        color: purple;
+      }
+
+      &--red {
+        color: #f00;
+      }
+
+      // mac dinh fontawsome la dung before nen o day ta dung after
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: inherit; // ke thua thang cha
+        background-color: currentColor; // ke thua mau cua chu
+        opacity: 0.25; // do mo cua mau
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    &__desc {
+      font-weight: 300;
+    }
+
+    &__list {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      // margin-bottom: -20rem; lam cho chu xuong duoi hinh
+    }
+
+    &__item {
+      width: calc(50% - 3rem);
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+// lam cho doan text hien thi 2 dong
+.text-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &--2 {
+    -webkit-line-clamp: 2;
+  }
+}

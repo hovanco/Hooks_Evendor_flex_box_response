@@ -1,0 +1,22 @@
+.partner {
+  margin-bottom: 19rem;
+
+  &__container {
+    max-width: 83rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 7rem;
+    padding-bottom: 7rem;
+    border-bottom: 1px solid currentColor;
+  }&__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+}

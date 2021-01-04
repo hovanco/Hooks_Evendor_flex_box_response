@@ -1,0 +1,23 @@
+.footer {
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+  }
+
+  &__item {
+    width: 25%;
+  }
+
+  &__link {
+    color: black;
+    font-size: 1.4rem;
+    text-decoration: none;
+    display: block; // cho cac the link xuong hang
+    margin-bottom: 3rem;
+    width: fit-content;// co bieu tuong chuot trong pham vi text cua the link
+  }
+
+}

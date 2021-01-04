@@ -1,0 +1,84 @@
+.category {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  
+  &__item {
+    width: calc(25% - 22.5px);
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 2rem;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    // muốn tên cate hiển thị 3 dòng
+    // display: flex;
+    // align-items: stretch;
+    // justify-content: flex-start;
+    // flex-wrap: nowrap;
+    // flex-direction: column; đồng thời thêm margin-top: auto vào details
+    // &__details {
+    //   margin-top: auto;
+    //   font-size: 1.4rem;
+    //   color: #c6cda7;
+    //   text-decoration: none;
+    //   i {
+    //     margin-left: 1.5rem;
+    //   }
+    // }
+    &:first-child {
+      box-shadow: 0 20px 35px -5px rgba(255, 151, 195, 0.25);
+    }
+
+    &:nth-child(2) {
+      box-shadow: 0 20px 35px -5px rgba(255, 112, 109, 0.25);
+    }
+
+    &:nth-last-child(2) {
+      box-shadow: 0 20px 35px -5px rgba(255, 152, 225, 0.25);
+    }
+
+    &:last-child {
+      box-shadow: 0 20px 35px -5px rgba(255, 200, 122, 0.25);
+    }
+  }
+
+  &__image {
+    border-radius: inherit;
+    height: 23rem;
+    width: 100%;
+    margin-bottom: 4rem;
+    // ko lam hinh bi meo
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+
+  }
+
+  &__name, &__details {
+    // để tên cate hiển trong 1 dòng khi chữ dài và có dấu 3 chấm
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__details {
+    margin-top: auto;
+    font-size: 1.4rem;
+    color: #c6cda7;
+    text-decoration: none;
+    i {
+      margin-left: 1.5rem;
+    }
+  }
+}
